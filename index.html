@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Digital Clock</title>
+</head>
+
+<body>
+   <nav class="navbar">
+       <ul>
+             <li><a href="">Clock</a></li>
+             <li><a href="">Home</a></li>
+             <li><a href="">About Us</a></li>
+             <li><a href="">Contact Us</a></li>
+
+       </ul>
+   </nav>
+    <div class="container">
+        
+            <div class="clock-header">
+                Digital Clock
+            </div>
+            <div class="clock-box">
+                <h2 class="clock-title">Current Time is: <span id="time"></span></h2>
+                    <p class="clock-text" >To see the time of different country click below</p>
+                    <a href="#" class="btn">Browse Time</a>
+            </div>
+    </div>
+    <script>
+        let date, localdate, time;
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        setInterval(() => {
+            date = new Date();
+            // time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+            time=date.toLocaleTimeString();
+            localdate = date.toLocaleDateString(undefined, options)
+             
+            document.getElementById('time').innerHTML = time + "<br>" + localdate;
+
+        },1000);
+    </script>
+    
+</body>
+
+</html>
